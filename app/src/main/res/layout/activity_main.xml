@@ -43,6 +43,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/adamina"
                 android:hint="Jumlah Harga"
+                android:inputType="number"
                 tools:ignore="VisualLintTextFieldSize" />
         </com.google.android.material.textfield.TextInputLayout>
 
