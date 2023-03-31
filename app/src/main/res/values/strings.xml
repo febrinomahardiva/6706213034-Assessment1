@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Assessment1-3034</string>
+    <string name="fuel_pal">Fuel Pal</string>
+    <string name="button_hitung">Hitung</string>
+    <string name="InputKosong">Input Tidak Boleh Kosong!</string>
+    <string-array name="jenis">
+        <item>Pilih Jenis Bahan Bakar</item>
+        <item>Pertalite</item>
+        <item>Pertamax</item>
+        <item>Solar</item>
+    </string-array>
+
 </resources>
