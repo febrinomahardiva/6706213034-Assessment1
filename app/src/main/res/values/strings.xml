@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Assessment1-3034</string>
+    <string name="app_name">Assessment2-3034</string>
     <string name="fuel_pal">Fuel Pal</string>
     <string name="button_hitung">Hitung</string>
     <string name="InputKosong">Input Tidak Boleh Kosong!</string>
@@ -9,5 +9,16 @@
         <item>Pertamax</item>
         <item>Solar</item>
     </string-array>
-
+    <string name="jumlahHargaInvalid">Jumlah Harga Tidak Boleh Kosong!</string>
+    <string name="jenisBbmInvalid">Pilih Jenis BBM!</string>
+    <string name="judulPertaLite">Pertalite</string>
+    <string name="judulPertaMax">Pertamax</string>
+    <string name="judulSolar">Solar</string>
+    <string name="panduanPertalite">Pertalite berwarna hijau, oktan 90 untuk rasio kompresi mesin 9:1 sampai 10:1.</string>
+    <string name="panduanPertamax">Pertamax berwarna biru, oktan 92 untuk rasio kompresi mesin 10:1 sampai 11:1</string>
+    <string name="panduanSolar">Solar berwarna kuning kecoklatan, cetane number 48 untuk rasio kompresi 15:1 sampai 22:1.</string>
+    <string name="about">About Apps</string>
+    <string name="copyright">Fuel Pal adalah aplikasi untuk mengetahui berapa liter bahan bakar yang kita dapat dari jumlah uang yang kita miliki dari jenis bahan bakar yang berbeda\n\nAplikasi ini dibuat untuk memenuhi nilai Assessment 2 Mobpro 1. Temukan kodenya di https://github.com/febrinomahardiva/6706213034-Assessment1.git\n\nCopyright © 2023 Febrino Mahardiva Akbar - 6706213034.\nAll rights reserved.</string>
+    <string name="share">Share</string>
+    <string name="share_template">Jumlah Harga: %1$s\nJenis BBM: %2$s\n%3$s\n%4$s</string>
 </resources>
