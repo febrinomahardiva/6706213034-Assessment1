@@ -1,4 +1,4 @@
-package org.d3if3034.assessment1_3034.ui
+package org.d3if3034.assessment1_3034.ui.hitung
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import org.d3if3034.assessment1_3034.R
 import org.d3if3034.assessment1_3034.databinding.FragmentMainBinding
+import org.d3if3034.assessment1_3034.db.FuelDb
 import org.d3if3034.assessment1_3034.model.JumlahLiter
 
 class MainFragment : Fragment() {
@@ -17,7 +18,9 @@ class MainFragment : Fragment() {
     private lateinit var binding: FragmentMainBinding
 
     private val viewModel: MainViewModel by lazy {
-        ViewModelProvider(requireActivity())[MainViewModel::class.java]
+        val db = FuelDb.getInstance(requireContext())
+        val factory = MainViewModelFactory(db.dao)
+        ViewModelProvider(this, factory)[MainViewModel::class.java]
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -44,10 +47,17 @@ class MainFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.menu_about) {
-            findNavController().navigate(
-                R.id.action_mainFragment_to_aboutFragment)
-            return true
+        when(item.itemId) {
+            R.id.menu_history -> {
+                findNavController().navigate(
+                    R.id.action_mainFragment_to_historyFragment)
+                return true
+            }
+            R.id.menu_about -> {
+                findNavController().navigate(
+                    R.id.action_mainFragment_to_aboutFragment)
+                return true
+            }
         }
         return super.onOptionsItemSelected(item)
     }

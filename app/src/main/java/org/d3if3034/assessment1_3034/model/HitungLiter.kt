@@ -1,6 +1,8 @@
 package org.d3if3034.assessment1_3034.model
 
-fun JumlahHarga.HitungLiter(): JumlahLiter {
+import org.d3if3034.assessment1_3034.db.FuelEntity
+
+fun FuelEntity.HitungLiter(): JumlahLiter {
     val jumlahHarga = jumlahHarga
     val jenis =
         if (jenisBbm.equals("Pertalite", ignoreCase = true)) {

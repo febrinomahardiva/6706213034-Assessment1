@@ -21,4 +21,12 @@
     <string name="copyright">Fuel Pal adalah aplikasi untuk mengetahui berapa liter bahan bakar yang kita dapat dari jumlah uang yang kita miliki dari jenis bahan bakar yang berbeda\n\nAplikasi ini dibuat untuk memenuhi nilai Assessment 2 Mobpro 1. Temukan kodenya di https://github.com/febrinomahardiva/6706213034-Assessment1.git\n\nCopyright © 2023 Febrino Mahardiva Akbar - 6706213034.\nAll rights reserved.</string>
     <string name="share">Share</string>
     <string name="share_template">Jumlah Harga: %1$s\nJenis BBM: %2$s\n%3$s\n%4$s</string>
+    <string name="no_data">No Data Found</string>
+    <string name="history">History</string>
+    <string name="hasil_x">Jumlah Liter: %1$.2f</string>
+    <string name="data_x">Jumlah Harga: %1$.1f - Jenis Bbm: %2$.1f - %3$s</string>
+    <string name="delete_history">Delete History</string>
+    <string name="delete_confirmation">Delete All History?</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
 </resources>
