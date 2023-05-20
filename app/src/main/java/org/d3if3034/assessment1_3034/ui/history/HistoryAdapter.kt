@@ -1,12 +1,15 @@
 package org.d3if3034.assessment1_3034.ui.history
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import org.d3if3034.assessment1_3034.R
 import org.d3if3034.assessment1_3034.databinding.ItemHistoryBinding
 import org.d3if3034.assessment1_3034.db.FuelEntity
+import org.d3if3034.assessment1_3034.model.HitungLiter
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -22,6 +25,7 @@ class HistoryAdapter :
                     return oldData.id == newData.id
                 }
 
+                @SuppressLint("DiffUtilEquals")
                 override fun areContentsTheSame(
                     oldData: FuelEntity, newData: FuelEntity
                 ): Boolean {
@@ -51,9 +55,24 @@ class HistoryAdapter :
         )
 
         fun bind(item: FuelEntity) = with(binding) {
-            val  = item.h()
-            kategoriTextView.text = hasilBmi.kategori.toString().substring(0, 1) val colorRes = when(hasilBmi.kategori) {
-            KategoriBmi.KURUS -> R.color.kurus KategoriBmi.IDEAL -> R.color.ideal else -> R.color.gemuk
+            val jumlahLiter = item.HitungLiter().jumlahLiter
+            val totalHarga = item.jumlahHarga
+
+            kategoriTextView.text = item.jenisBbm.toString().substring(0, 1)
+
+            if (item.jenisBbm == "Pertalite"){
+                kategoriTextView.setBackgroundResource(R.mipmap.ic_pertalite)
+            }else if (item.jenisBbm == "Pertamax"){
+                kategoriTextView.setBackgroundResource(R.mipmap.ic_pertamax)
+            }else {
+                kategoriTextView.setBackgroundResource(R.mipmap.ic_solar)
+            }
+
+            tanggalTextView.text = dateFormatter.format(Date(item.tanggal))
+            hasilTextView.text = "Jumlah Liter: ${item.HitungLiter().jumlahLiter}"
+            dataTextView.text = "Jumlah Harga: ${item.jumlahHarga} / Harga per Liter: ${item.HitungLiter().hargaSatuLiter}"
+
+
         }
     }
-    }
+}
