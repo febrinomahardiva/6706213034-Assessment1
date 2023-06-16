@@ -1,0 +1,5 @@
+[
+  {"jenisBbm : "Pertalite", "hargaSatuan" : "10000", "imageResId" : "Pertalite"},
+  {"jenisBbm : "Pertamax", "hargaSatuan" : "13550", "imageResId" : "Pertamax"},
+  {"jenisBbm : "Solar", "hargaSatuan" : "15250", "imageResId" : "Solar"}
+]
