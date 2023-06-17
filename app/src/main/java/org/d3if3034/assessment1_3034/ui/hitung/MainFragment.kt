@@ -12,6 +12,7 @@ import org.d3if3034.assessment1_3034.R
 import org.d3if3034.assessment1_3034.databinding.FragmentMainBinding
 import org.d3if3034.assessment1_3034.db.FuelDb
 import org.d3if3034.assessment1_3034.model.JumlahLiter
+import org.d3if3034.assessment1_3034.network.FuelApi
 
 class MainFragment : Fragment() {
 
@@ -23,8 +24,10 @@ class MainFragment : Fragment() {
         ViewModelProvider(this, factory)[MainViewModel::class.java]
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         binding = FragmentMainBinding.inflate(layoutInflater, container, false)
         setHasOptionsMenu(true)
         return binding.root
@@ -39,6 +42,8 @@ class MainFragment : Fragment() {
         }
 
         viewModel.getJumlahLiter().observe(requireActivity(), ::showResult)
+
+        viewModel.scheduleUpdater(requireActivity().application)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -47,15 +52,23 @@ class MainFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
+        when (item.itemId) {
             R.id.menu_history -> {
                 findNavController().navigate(
-                    R.id.action_mainFragment_to_historyFragment)
+                    R.id.action_mainFragment_to_historyFragment
+                )
                 return true
             }
             R.id.menu_about -> {
                 findNavController().navigate(
-                    R.id.action_mainFragment_to_aboutFragment)
+                    R.id.action_mainFragment_to_aboutFragment
+                )
+                return true
+            }
+            R.id.menu_fuel -> {
+                findNavController().navigate(
+                    R.id.action_mainFragment_to_listFragment
+                )
                 return true
             }
         }
@@ -64,7 +77,7 @@ class MainFragment : Fragment() {
 
     fun Hitung() {
         val jumlahHarga = binding.jumlahHarga.text.toString()
-        if(TextUtils.isEmpty(jumlahHarga)) {
+        if (TextUtils.isEmpty(jumlahHarga)) {
             Toast.makeText(context, R.string.jumlahHargaInvalid, Toast.LENGTH_LONG).show()
             return
         }
@@ -72,7 +85,7 @@ class MainFragment : Fragment() {
         val jumlahHargaFloat = jumlahHarga.toFloat()
 
         val jenisBbm = binding.spinner.selectedItem.toString()
-        if(TextUtils.isEmpty(jenisBbm)) {
+        if (TextUtils.isEmpty(jenisBbm)) {
             Toast.makeText(context, R.string.jenisBbmInvalid, Toast.LENGTH_LONG).show()
             return
         }
@@ -81,7 +94,8 @@ class MainFragment : Fragment() {
     }
 
     private fun shareData() {
-        val message = getString(R.string.share_template,
+        val message = getString(
+            R.string.share_template,
             binding.jumlahHarga.text,
             binding.spinner.selectedItem,
             binding.hargaSatuLiter.text,
@@ -91,7 +105,9 @@ class MainFragment : Fragment() {
         val shareIntent = Intent(Intent.ACTION_SEND)
         shareIntent.setType("text/plain").putExtra(Intent.EXTRA_TEXT, message)
         if (shareIntent.resolveActivity(
-                requireActivity().packageManager) != null) {
+                requireActivity().packageManager
+            ) != null
+        ) {
             startActivity(shareIntent)
         }
     }

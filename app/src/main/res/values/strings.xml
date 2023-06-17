@@ -29,4 +29,10 @@
     <string name="delete_confirmation">Delete All History?</string>
     <string name="delete">Delete</string>
     <string name="cancel">Cancel</string>
+    <string name="fuel">Fuel</string>
+    <string name="koneksi_error">Connection Error</string>
+    <string name="channel_name">Fuel Info</string>
+    <string name="channel_desc">Update Newest Fuel</string>
+    <string name="notif_title">Fuel New Price!</string>
+    <string name="notif_text">Check it now so youre not curious..</string>
 </resources>

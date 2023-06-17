@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/menu_fuel"
+        android:icon="@drawable/baseline_water_drop_24"
+        android:title="@string/fuel"
+        app:showAsAction="ifRoom" />
+
+    <item
         android:id="@+id/menu_history"
         android:icon="@drawable/ic_baseline_history_24"
         android:title="@string/history"
@@ -12,4 +18,11 @@
         android:id="@+id/menu_about"
         android:title="@string/about"
         app:showAsAction="never" />
+
+<!--    <item-->
+<!--        android:id="@+id/menu_fuel"-->
+<!--        android:title="@string/fuel"-->
+<!--        app:showAsAction="never" />-->
+
+
 </menu>
