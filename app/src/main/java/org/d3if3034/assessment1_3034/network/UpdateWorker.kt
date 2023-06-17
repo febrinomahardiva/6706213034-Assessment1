@@ -26,7 +26,7 @@ class UpdateWorker(
 
         val builder = NotificationCompat.Builder(applicationContext,
                 MainActivity.CHANNEL_ID)
-            .setSmallIcon(R.mipmap.ic_launcher_round)
+            .setSmallIcon(R.drawable.baseline_local_gas_station_24)
             .setContentTitle(applicationContext.getString(
                 R.string.notif_title))
             .setContentText(applicationContext.getString(
